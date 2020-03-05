@@ -28,16 +28,17 @@
     "yarn": ">= 0.18.0"
   },
   "scripts": {
+    "desktop": "cd packages/insights-desktop && yarn run start",
     "init": "rm -rf .insights && ./packages/insights/bin/insights-init --dev",
     "init-no-login": "rm -rf .insights && ./packages/insights/bin/insights-init --dev --no-login",
-    "start": "concurrently --kill-others \"yarn run start-api\" \"yarn run start-web\" \"yarn run start-charts\"",
-    "start-api": "cd packages/insights-api && yarn start",
-    "start-charts": "cd packages/insights-charts && yarn start",
-    "start-web": "cd packages/insights-web && yarn start",
-    "build": "concurrently \"yarn run build-api\" \"yarn run build-web\" \"yarn run build-charts\"",
-    "build-api": "cd packages/insights-api && yarn run compile",
-    "build-charts": "cd packages/insights-charts && yarn run build",
-    "build-web": "cd packages/insights-web && yarn run build",
+    "start": "node init && concurrently --kill-others \"yarn run start-api\" \"yarn run start-web\" \"yarn run start-charts\"",
+    "start-api": "node init && cd packages/insights-api && yarn start",
+    "start-charts": "node init && cd packages/insights-charts && yarn start",
+    "start-web": "node init && cd packages/insights-web && yarn start",
+    "build": "node init && concurrently \"yarn run build-api\" \"yarn run build-web\" \"yarn run build-charts\"",
+    "build-api": "node init && cd packages/insights-api && yarn run compile",
+    "build-charts": "node init && cd packages/insights-charts && yarn run build",
+    "build-web": "node init && cd packages/insights-web && yarn run build",
     "createsuperuser": "cd packages/insights && ./bin/insights-createsuperuser"
   },
   "files": [
