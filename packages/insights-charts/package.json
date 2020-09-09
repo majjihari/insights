@@ -26,12 +26,12 @@
     "yarn": ">= 0.18.0"
   },
   "scripts": {
-    "build": "concurrently \"npm run build:cjs\" \"npm run build:es\"",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel src --out-dir lib",
-    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "start": "concurrently --kill-others \"npm run start:cjs\" \"npm run start:es\"",
-    "start:cjs": "cross-env BABEL_ENV=cjs babel -w src --out-dir lib",
-    "start:es": "cross-env BABEL_ENV=es babel -w src --out-dir es",
+    "build": "node init && concurrently \"npm run build:cjs\" \"npm run build:es\"",
+    "build:cjs": "node init && cross-env BABEL_ENV=cjs babel src --out-dir lib",
+    "build:es": "node init && cross-env BABEL_ENV=es babel src --out-dir es",
+    "start": "node init && concurrently --kill-others \"npm run start:cjs\" \"npm run start:es\"",
+    "start:cjs": "node init && cross-env BABEL_ENV=cjs babel -w src --out-dir lib",
+    "start:es": "node init && cross-env BABEL_ENV=es babel -w src --out-dir es",
     "size": "size-limit",
     "test": "jest",
     "lint": "eslint src/**",
