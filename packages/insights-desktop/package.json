@@ -8,10 +8,9 @@
     "get-port": "^5.1.1"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "node init && electron ."
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "bin": {
     "electron": "^8.0.3",
     "insights-desktop": "./bin/insights-desktop"
