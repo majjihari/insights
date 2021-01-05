@@ -48,7 +48,6 @@ node_modules
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -120,3 +119,4 @@ $RECYCLE.BIN/
 
 # Others
 data/
+config.bat
