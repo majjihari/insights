@@ -29,8 +29,8 @@
   ],
   "scripts": {
     "test": "yarn run compile && yarn run jest",
-    "start": "ts-node-dev --no-notify src/",
-    "run-build": "yarn run compile && node lib/",
+    "start": "node init && ts-node-dev --no-notify src/",
+    "run-build": "node init && yarn run compile && node lib/",
     "jest": "jest  --forceExit",
     "compile": "shx rm -rf lib/ && tsc",
     "prepublish": "yarn run compile"
@@ -73,7 +73,7 @@
     "@types/pg-escape": "^0.2.0",
     "@types/pluralize": "^0.0.29",
     "@types/serve-favicon": "^2.5.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "jest": "^24.9.0",
     "nodemon": "^2.0.2",
     "shx": "^0.3.2",
