@@ -40,8 +40,8 @@
     "typescript": "3.7.5"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "node init && react-app-rewired start",
+    "build": "node init && react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "prepublish": "npm run build"

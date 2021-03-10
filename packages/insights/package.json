@@ -31,9 +31,9 @@
     "yarn": ">= 0.18.0"
   },
   "scripts": {
-    "start": "./bin/insights-start",
-    "build": "npm run build-web && npm run copy-web",
-    "build-web": "cd ../insights-web && npm run build",
+    "start": "node init && ./bin/insights-start",
+    "build": "node init && npm run build-web && npm run copy-web",
+    "build-web": "node init && cd ../insights-web && npm run build",
     "copy-web": "rm -rf web-build/ && cp -a ../insights-web/build ./web-build",
     "prepublish": "npm run build"
   },
